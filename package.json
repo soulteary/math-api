@@ -1,7 +1,7 @@
 {
-  "name": "@chialab/math-api",
-  "version": "0.2.0",
-  "description": "Render LaTeX and MathML formulas as SVG or PNG.",
+  "name": "@soulteary/math-api",
+  "version": "0.3.0",
+  "description": "Render LaTeX formulas as SVG.",
   "main": "index.js",
   "bin": "bin/server.js",
   "scripts": {
@@ -14,13 +14,12 @@
     "node",
     "docker"
   ],
-  "author": "Chia Lab s.r.l.",
+  "author": ["Chia Lab s.r.l.", "soulteary"],
   "license": "MIT",
   "dependencies": {
     "body-parser": "^1.19.0",
     "express": "^4.16.4",
-    "mathjax-node": "^2.1.1",
-    "svg2png": "^4.1.1"
+    "mathjax": "^3.1.2"
   },
   "devDependencies": {
     "chai": "^4.2.0",
