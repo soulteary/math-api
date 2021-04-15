@@ -1,14 +1,13 @@
-ARG NODE_VERSION=8.10
-FROM node:${NODE_VERSION}
+FROM node:15.14.0
 
 ARG NODE_ENV=production
 ENV PORT=3000 NODE_ENV=${NODE_ENV}
 
 WORKDIR /usr/src/app
-COPY package.json yarn.lock /usr/src/app/
-RUN yarn install
+COPY package.json package-lock.json /usr/src/app/
+RUN npm install
 COPY . /usr/src/app
 
 EXPOSE 3000
 
-CMD [ "yarn", "start" ]
+CMD [ "npm", "start" ]

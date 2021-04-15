@@ -5,7 +5,7 @@
   "main": "index.js",
   "bin": "bin/server.js",
   "scripts": {
-    "start": "node bin/server.js",
+    "start": "NODE_ENV=production node bin/server.js",
     "test": "mocha test/*.js test/**/*.js",
     "api-gateway": "sam local start-api --template templates/root.yml"
   },
@@ -14,7 +14,10 @@
     "node",
     "docker"
   ],
-  "author": ["Chia Lab s.r.l.", "soulteary"],
+  "author": [
+    "Chia Lab s.r.l.",
+    "soulteary"
+  ],
   "license": "MIT",
   "dependencies": {
     "body-parser": "^1.19.0",
