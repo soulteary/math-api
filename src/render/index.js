@@ -10,8 +10,9 @@ const MathJax = mathjax.init({ loader: { load: ["input/tex", "output/svg"] } });
 exports.render = (source) => {
     return new Promise((resolve, reject) => {
         MathJax.then((MathJax) => {
-            const svg = MathJax.tex2svg(source, { display: true });
-            resolve(MathJax.startup.adaptor.outerHTML(svg));
+            const svg = MathJax.tex2svg(source);
+            const ret = MathJax.startup.adaptor.outerHTML(svg) || "";
+            resolve(ret.slice(56, -16));
         }).catch((err) => {
             console.error(err);
             throw new Error(`Invalid output: ${source || ""}`);
